@@ -1,11 +1,10 @@
-#include "ThreadPool.h"
-#include <thread>
 #include <iostream>
 
+#include "ThreadPool.h"
+
 int main() {
-    // for (int threads: {1, 2, 4, 8, std::thread::hardware_concurrency()}) {
-    // }
     ThreadPool<4> tp;
-    auto it = tp.enqueue([]{ return 4;});
-    std::cout << it.get() << std::endl;
+    auto fut = tp.submit([]() { return 42; });
+    std::cout << fut.get() << std::endl;
+    return 0;
 }
