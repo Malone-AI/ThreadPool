@@ -24,3 +24,7 @@ int main() {
 [OK] 单线程版本按提交顺序执行
 
 === 测试结束 ===
+
+# Reference
+
+https://github.com/progschj/ThreadPool.git
